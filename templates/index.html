@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maaş Hesaplama</title>
+</head>
+<body>
+    <h1>Maaş Hesaplama</h1>
+    <form action="/calculate" method="post">
+        <label for="normal_hours">Normal Çalışma Saatleri:</label>
+        <input type="text" id="normal_hours" name="normal_hours"><br><br>
+
+        <label for="night_hours_25_free">Gece Çalışma Saatleri (11pm-12am ve 4am-6am, %25 vergi dışı):</label>
+        <input type="text" id="night_hours_25_free" name="night_hours_25_free"><br><br>
+
+        <label for="night_hours_40_free">Gece Çalışma Saatleri (12am - 4am, %40 vergi dışı):</label>
+        <input type="text" id="night_hours_40_free" name="night_hours_40_free"><br><br>
+
+        <label for="night_hours_25_taxed">Gece Çalışma Saatleri (11pm-12am ve 4am-6am, %25 vergi içi):</label>
+        <input type="text" id="night_hours_25_taxed" name="night_hours_25_taxed"><br><br>
+
+        <label for="night_hours_10_taxed">Gece Çalışma Saatleri (12am - 4am, %10 vergi içi):</label>
+        <input type="text" id="night_hours_10_taxed" name="night_hours_10_taxed"><br><br>
+
+        <label for="saturday_hours">Cumartesi Çalışma Saatleri:</label>
+        <input type="text" id="saturday_hours" name="saturday_hours"><br><br>
+
+        <label for="sunday_hours">Pazar Çalışma Saatleri:</label>
+        <input type="text" id="sunday_hours" name="sunday_hours"><br><br>
+
+        <label for="overtime_hours">Fazla Mesai Saatleri:</label>
+        <input type="text" id="overtime_hours" name="overtime_hours"><br><br>
+
+        <label for="tax_class">Vergi Sınıfı:</label>
+        <select id="tax_class" name="tax_class">
+            <option value="1">Vergi Sınıfı 1</option>
+            <option value="2">Vergi Sınıfı 2</option>
+            <option value="3">Vergi Sınıfı 3</option>
+            <option value="4">Vergi Sınıfı 4</option>
+            <option value="5">Vergi Sınıfı 5</option>
+            <option value="6">Vergi Sınıfı 6</option>
+        </select><br><br>
+
+        <input type="submit" value="Hesapla">
+    </form>
+</body>
+</html>
