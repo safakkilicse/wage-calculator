@@ -1,88 +1,61 @@
-# Maaş Hesaplama Web Uygulaması
+# Payment Calculator Flask App
 
-Bu proje, Almanya'daki çalışanlar için saatlik ücret, gece mesaisi, hafta sonu mesaisi ve fazla mesai ücretlerini hesaplayan bir web uygulamasıdır. Uygulama, farklı vergi sınıflarına göre vergi kesintilerini de dikkate alır.
+This Flask application calculates the total gross payment for an individual based on hourly rates and hours worked, including bonuses for weekends and night shifts expressed as percentages.
 
-## Özellikler
+## Features
 
-- Normal çalışma saatleri, gece mesaisi, cumartesi ve pazar mesaisi için ayrı saat girişleri.
-- Farklı vergi sınıflarına göre vergi kesintisi hesaplama.
-- Gece mesaisi ve hafta sonu mesaileri için farklı bonus oranları.
-- Fazla mesai ücretleri için yüzde 30 bonus hesaplama.
-- Toplam ödeme ve vergi sonrası ödeme hesaplama.
+- **Hourly Rate Input**: Users can input their standard hourly rate.
+- **Weekday Hours**: Users input how many hours they worked during weekdays.
+- **Weekend Hours and Bonus**: Users input weekend hours worked and the bonus percentage they receive.
+- **Night Shift Hours and Bonus**: Users input night shift hours worked and the bonus percentage for those hours.
+- **Total Gross Payment Calculation**: The app calculates the total gross payment without considering any taxes.
 
-## Kurulum
+## Setup and Installation
 
-### Gereksinimler
+To run this application, you will need Python and Flask installed on your machine.
 
-- Python 3.x
+### Prerequisites
+
+- Python 3
+- pip
 - Flask
 
-### Adımlar
+### Installing Python and Flask
 
-1. Bu depoyu yerel makinenize klonlayın:
-    ```sh
-    git clone https://github.com/kullanici/maas-hesaplama.git
-    ```
-2. Proje dizinine gidin:
-    ```sh
-    cd maas-hesaplama
-    ```
-3. Gerekli bağımlılıkları yükleyin:
-    ```sh
-    pip install flask
-    ```
-4. Uygulamayı başlatın:
-    ```sh
-    python app.py
-    ```
+If you don't have Python installed, download and install it from [python.org](https://python.org). Flask can be installed using pip:
 
-## Kullanım
+```bash
+pip install Flask
 
-1. Tarayıcınızda `http://127.0.0.1:5000/` adresine gidin.
-2. Formdaki gerekli alanları doldurun:
-    - Normal çalışma saatleri
-    - Gece mesaisi (farklı saat dilimleri için)
-    - Cumartesi çalışma saatleri
-    - Pazar çalışma saatleri
-    - Fazla mesai saatleri
-    - Vergi sınıfı
-3. "Hesapla" butonuna tıklayın.
-4. Toplam ödeme ve vergi sonrası ödeme sonuçlarını görüntüleyin.
+### Clone the Repository
+Clone this repository to your local machine:
+git clone https://github.com/your-repository/payment-calculator.git
+cd payment-calculator
 
-## Dosya Yapısı
+### Run the Application
+To start the server, run:
+python app.py
+Navigate to http://127.0.0.1:5000/ in your web browser to view and use the application.
 
-- `app.py`: Ana Flask uygulama dosyası.
-- `templates/`: HTML dosyalarının bulunduğu dizin.
-  - `index.html`: Kullanıcıdan giriş verilerini alan form.
-  - `result.html`: Hesaplama sonuçlarını gösteren sayfa.
+Usage
+Input your hourly rate in the field labeled 'Hourly Rate'.
+Enter the hours you worked during weekdays in the 'Hours Worked on Weekdays' field.
+For weekend work, provide the hours and the bonus percentage in the respective fields.
+For night shifts, do the same by entering hours worked and the bonus percentage.
+Submit the form to see the calculated total gross payment displayed on a new page.
+Development
+This app is built using Flask, a lightweight WSGI web application framework in Python. It is designed to be easy to use and extend.
 
-## Vergi Sınıfları ve Oranları
+File Structure
+app.py: The main Python file with Flask routes.
+templates/: This folder contains the HTML templates for the app.
+index.html: The main form page.
+result.html: Displays the calculated payment.
+static/: Contains CSS stylesheets (if any).
+Contributing
+Contributions to this project are welcome! Please fork the repository and open a pull request with your improvements.
 
-- **Vergi Sınıfı 1**: %20 (Bekar, boşanmış, dul veya ayrı yaşayanlar)
-- **Vergi Sınıfı 2**: %18 (Bekar ebeveynler)
-- **Vergi Sınıfı 3**: %15 (Evli ve eşinin geliri olmayan veya düşük olan kişiler)
-- **Vergi Sınıfı 4**: %20 (Evli ve eşlerin geliri benzer olan kişiler)
-- **Vergi Sınıfı 5**: %25 (Evli ve eşinin yüksek geliri olan kişiler)
-- **Vergi Sınıfı 6**: %30 (İkinci veya ek bir işte çalışanlar)
+License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-## Örnek Hesaplama
-
-### Giriş Verileri
-- Normal Çalışma Saatleri: 8 saat
-- Gece Mesaisi (11pm-12am ve 4am-6am, %25 vergi dışı): 1 saat
-- Gece Mesaisi (12am - 4am, %40 vergi dışı): 2 saat
-- Gece Mesaisi (11pm-12am ve 4am-6am, %25 vergi içi): 1 saat
-- Gece Mesaisi (12am - 4am, %10 vergi içi): 2 saat
-- Cumartesi Çalışma Saatleri: 5 saat
-- Pazar Çalışma Saatleri: 5 saat
-- Fazla Mesai Saatleri: 2 saat
-- Vergi Sınıfı: 1
-
-### Çıktı
-- Toplam Ödeme (Vergi Öncesi): €X
-- Toplam Ödeme (Vergi Sonrası): €Y
-
-## Lisans
-
-Bu proje MIT Lisansı ile lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
-# wage-calculator
+This README provides a detailed guide on how to set up and use your Flask application, along with some additional information about contributing and licensing. You can replace the repository URL and any other specific details with your actual project's data.

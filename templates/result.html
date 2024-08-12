@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Hesaplama Sonucu</title>
+    <title>Payment Result</title>
 </head>
 <body>
-    <h1>Hesaplama Sonucu</h1>
-    <p>Toplam Ödeme (Vergi Öncesi): €{{ total_pay }}</p>
-    <p>Toplam Ödeme (Vergi Sonrası): €{{ total_pay_taxed }}</p>
-    <a href="/">Yeni Hesaplama</a>
+    <h1>Total Gross Payment</h1>
+    <p>Total Payment: ${{ total_payment | round(2) }}</p>
+    <a href="/">Calculate Again</a>
 </body>
 </html>
